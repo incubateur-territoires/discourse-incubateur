@@ -234,19 +234,19 @@ body:not(.staff) .hamburger-dropdown {
   color: var(--primary);
   border: 1px solid var(--primary-low-mid);
   svg {
-    color: white !important;
+    color: white;
     height: 14px;
   }
 
   .d-icon {
-    color: var(--primary);
+    color: inherit;
   }
 
   &:hover {
     background-color: var(--quaternary-low);
-    color: var(--primary);
+    color: inherit;
     .d-icon {
-      color: var(--primary);
+      color: inherit;
     }
   }
 }

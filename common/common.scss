@@ -266,6 +266,15 @@ body:not(.staff) .hamburger-dropdown {
   display: none;
 }
 
+// Topics list
+
+.topic-list .activity,
+.topic-list .post-map,
+.topic-list .views,
+.topic-list .posts {
+  display: none;
+}
+
 
 // Thread page
 

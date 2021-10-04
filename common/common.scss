@@ -207,6 +207,7 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
 
   .wrap {
     margin-top: -200px;
+    padding: 0;
   }
 }
 .d-header-wrap {
@@ -242,13 +243,11 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
 
   .d-header-icons {
     svg.d-icon {
-      color: var(--primary);
       max-height: 20px;
     }
     img {
       max-width: 24px;
       max-height: 24px;
-      filter: brightness(0.3);
     }
   }
 }

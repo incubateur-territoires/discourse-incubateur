@@ -188,6 +188,18 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
     height: inherit;
     display: block;
   }
+
+  .logo-marianne {
+    display: none;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  search-dropdown svg {
+    color: var(--primary);
+  }
 }
 
 .d-header {
@@ -197,11 +209,49 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
     margin-top: -200px;
   }
 }
+.d-header-wrap {
+  position: absolute;
+  top: 0;
+  right: 24px;
+}
 
 #site-logo {
   display: none;
 }
 
+@media (max-width: 800px) {
+  .d-header .wrap {
+    margin-top: 4rem;
+  }
+  .marianne {
+    display: none;
+  }
+  #app .logo-text {
+    display: none;
+  }
+
+  .header-buttons button.login-button {
+    border: none !important;
+    padding-right: 0 !important;
+
+    svg {
+      display: none;
+    }
+  }
+
+
+  .d-header-icons {
+    svg.d-icon {
+      color: var(--primary);
+      max-height: 20px;
+    }
+    img {
+      max-width: 24px;
+      max-height: 24px;
+      filter: brightness(0.3);
+    }
+  }
+}
 
 
 

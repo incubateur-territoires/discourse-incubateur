@@ -202,25 +202,34 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   }
 }
 
-.d-header {
-  height: 0;
-
-  .wrap {
-    margin-top: -200px;
-    padding: 0;
-  }
-}
-.d-header-wrap {
-  position: absolute;
-  top: 0;
-  right: 24px;
+.d-header-icons .icon img.avatar {
+  width: auto;
+  height: auto;
 }
 
 #site-logo {
   display: none;
 }
 
-@media (max-width: 800px) {
+
+@media (min-width: 768px) {
+  .d-header {
+    height: 0;
+
+    .wrap {
+      margin-top: -200px;
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .d-header .wrap {
+    margin-top: -160px;
+  }
+}
+
+@media (max-width: 768px) {
   .d-header .wrap {
     margin-top: 4rem;
   }
@@ -229,6 +238,16 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   }
   #app .logo-text {
     display: none;
+  }
+
+  .d-header {
+    height: 0;
+  }
+  .d-header-wrap {
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    right: 24px;
   }
 
   .header-buttons button.login-button {

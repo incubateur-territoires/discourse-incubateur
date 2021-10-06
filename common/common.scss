@@ -8,6 +8,13 @@
   --black: #161616;
 }
 
+html {
+  font-size: 100%; // fix header ratio from website
+}
+.logo-text {
+  margin-bottom: 3px; // fix header ratio from website
+}
+
 body,
 h1, h2, h3, h4, h5, h6 {
   font-family: Marianne, Arial, sans-serif;

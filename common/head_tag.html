@@ -68,7 +68,8 @@
   api.registerConnectorClass('below-site-header', 'home-banner', {
     setupComponent(args, component) {
       api.onPageChange((url, title) => {
-        component.set('isHomePage', url === '/')
+        const uri = url.split('?')[0]
+        component.set('isHomePage', uri === '/')
         component.set('isAnonymous', !api.getCurrentUser() || api.getCurrentUser().is_anonymous)
       })
     }

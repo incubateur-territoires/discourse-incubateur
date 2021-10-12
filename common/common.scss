@@ -203,6 +203,11 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   search-dropdown svg {
     color: var(--primary);
   }
+
+  nav .active {
+    --tw-bg-opacity: 1;
+    background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+  }
 }
 
 .d-header-icons .icon img.avatar {

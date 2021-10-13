@@ -552,6 +552,11 @@ body:not(.staff) .hamburger-dropdown {
   display: none;
 }
 
+// On a mobile, where the filters are displayed on multiple lines,
+// the filters should have a vertical spacing.
+.select-kit.combo-box.category-drop {
+  margin-top: 8px;
+}
 
 // Thread page
 

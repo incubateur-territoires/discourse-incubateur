@@ -375,6 +375,7 @@ body:not(.staff) .hamburger-dropdown {
   button,
   a.btn {
     width: max-content;
+    max-width: 100%;
     padding: 1rem 1.5rem;
     border-radius: 2rem;
     background-color: var(--btn-cta-bg) !important;

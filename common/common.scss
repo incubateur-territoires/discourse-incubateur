@@ -284,6 +284,7 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   }
 }
 
+// End of website css import for header
 
 
 table td {
@@ -449,6 +450,11 @@ body:not(.staff) .hamburger-dropdown {
 
 
 // Override Discourse theme
+
+// Create a topic and close it; The draft buttons were white on white
+.composer-controls button {
+  background-color: transparent !important;
+}
 
 .topic-list-item.visited a.title:not(.badge-notification),
 .latest-topic-list-item.visited a.title:not(.badge-notification),

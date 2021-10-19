@@ -2,6 +2,7 @@
   --btn-cta-fg: #fff;
   --btn-cta-bg: #009F79;
   --tertiary-medium: #a05bea;
+  --quaternary-low: #fff;
   --create-topic-fg: #fff;
   --create-topic-bg: #009;
   --neutral: #888;
@@ -203,6 +204,11 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   search-dropdown svg {
     color: var(--primary);
   }
+
+  nav .active {
+    --tw-bg-opacity: 1;
+    background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+  }
 }
 
 .d-header-icons .icon img.avatar {
@@ -278,6 +284,7 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   }
 }
 
+// End of website css import for header
 
 
 table td {
@@ -368,6 +375,7 @@ body:not(.staff) .hamburger-dropdown {
   button,
   a.btn {
     width: max-content;
+    max-width: 100%;
     padding: 1rem 1.5rem;
     border-radius: 2rem;
     background-color: var(--btn-cta-bg) !important;
@@ -443,6 +451,11 @@ body:not(.staff) .hamburger-dropdown {
 
 
 // Override Discourse theme
+
+// Create a topic and close it; The draft buttons were white on white
+.composer-controls button {
+  background-color: transparent !important;
+}
 
 .topic-list-item.visited a.title:not(.badge-notification),
 .latest-topic-list-item.visited a.title:not(.badge-notification),
@@ -539,8 +552,17 @@ body:not(.staff) .hamburger-dropdown {
   display: none;
 }
 
+// On a mobile, where the filters are displayed on multiple lines,
+// the filters should have a vertical spacing.
+.select-kit.combo-box.category-drop {
+  margin-top: 8px;
+}
 
 // Thread page
+
+.topic-body p {
+  margin: .7rem 0;
+}
 
 .post-info.edits {
   display: none;

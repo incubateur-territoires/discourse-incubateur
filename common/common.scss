@@ -220,6 +220,12 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   display: none;
 }
 
+// Tailwind (imported with the header from the website) resets the `a` link color.
+// We put it back to the Discourse default
+a {
+  color: var(--tertiary) !important;
+}
+
 
 @media (min-width: 768px) {
   .d-header {

@@ -222,7 +222,7 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
 
 // Tailwind (imported with the header from the website) resets the `a` link color.
 // We put it back to the Discourse default
-a {
+.cooked a {
   color: var(--tertiary) !important;
 }
 

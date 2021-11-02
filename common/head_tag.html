@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-eval' 'unsafe-inline' 'self' https://cdn.logrocket.io https://cdn.lr-ingest.io https://stats.data.gouv.fr https://unpkg.com; worker-src 'self' blob:; frame-src 'self' blob: https://*.typeform.com; connect-src 'self' https://*.typeform.com https://*.logrocket.io https://*.lr-ingest.io https://*.logrocket.com https://stats.data.gouv.fr https://incubateur.anct.gouv.fr; font-src https://unpkg.com;">
+<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-eval' 'unsafe-inline' 'self' https://incubateur-territoires.github.io https://cdn.logrocket.io https://cdn.lr-ingest.io https://stats.data.gouv.fr https://unpkg.com; worker-src 'self' blob:; frame-src 'self' blob: https://*.typeform.com; connect-src 'self' https://*.typeform.com https://*.logrocket.io https://*.lr-ingest.io https://*.logrocket.com https://stats.data.gouv.fr https://incubateur.anct.gouv.fr; font-src https://unpkg.com;">
 
 <script src="https://cdn.lr-ingest.io/LogRocket.min.js"></script>
 <script>location.href.includes('.gouv.fr') && window.LogRocket && window.LogRocket.init('ifgchv/forum-des-territoires');</script>
@@ -6,6 +6,7 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <script src="https://incubateur.anct.gouv.fr/assets/js/app.31595557.js"></script>
 <script src="https://incubateur.anct.gouv.fr/assets/js/app.f3695ad9.js"></script>
+<script src="https://incubateur-territoires.github.io/feedback-widget/widget.js"></script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/above-site-header/incubateur-header">
 <div id="app" class="container mx-auto">
@@ -220,6 +221,12 @@
   </nav>
   {{/if}}
 </script>
+
+<script type="text/x-handlebars" data-template-name="/connectors/below-footer/feedback-widget">
+  <!-- uncomment the line below to enable feedbacks -->
+  <feedback-widget></feedback-widget>
+</script>
+
 
 <script type="text/discourse-plugin" version="0.8.13">
 /*

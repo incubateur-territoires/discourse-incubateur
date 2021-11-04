@@ -474,6 +474,7 @@ body:not(.staff) .hamburger-dropdown {
 
 
 .navigation-container {
+  justify-content: end;
   // Categories and tags selector, Create topic button
   & > :not(.nav-pills) {
     a,
@@ -559,12 +560,6 @@ body:not(.staff) .hamburger-dropdown {
 .topic-list .views,
 .topic-list .posts {
   display: none;
-}
-
-// On a mobile, where the filters are displayed on multiple lines,
-// the filters should have a vertical spacing.
-.select-kit.combo-box.category-drop {
-  margin-top: 8px;
 }
 
 // Thread page

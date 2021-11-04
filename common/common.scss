@@ -475,6 +475,7 @@ body:not(.staff) .hamburger-dropdown {
 
 .navigation-container {
   justify-content: end;
+  align-items: center;
   // Categories and tags selector, Create topic button
   & > :not(.nav-pills) {
     a,

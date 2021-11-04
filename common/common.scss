@@ -225,6 +225,9 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
 .cooked a {
   color: var(--tertiary) !important;
 }
+.cooked a:hover {
+  text-decoration: underline !important;
+}
 
 
 @media (min-width: 768px) {

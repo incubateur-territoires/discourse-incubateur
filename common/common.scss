@@ -482,8 +482,10 @@ body:not(.staff) .hamburger-dropdown {
     button,
     .select-kit-header {
       border-radius: 2rem;
-      padding: 0 1.3rem .2rem 1.3rem;
+      padding-left: 1.3rem;
+      padding-right: 1.3rem;
       background-color: var(--header_background);
+      height: 32px;
 
       &:focus,
       &:active {

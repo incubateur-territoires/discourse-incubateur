@@ -1,6 +1,7 @@
 :root {
   --btn-cta-fg: #fff;
   --btn-cta-bg: #009F79;
+  --btn-cta-bg-hover: #00AC8C;
   --tertiary-medium: #a05bea;
   --quaternary-low: #fff;
   --create-topic-fg: #fff;
@@ -396,7 +397,10 @@ body:not(.staff) .hamburger-dropdown {
     background-color: var(--btn-cta-bg) !important;
     margin: 2rem 0;
     color: var(--btn-cta-fg) !important;
-    border: 0;
+    border: 0 !important;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5rem;
 
     svg {
       display: none !important;
@@ -405,6 +409,9 @@ body:not(.staff) .hamburger-dropdown {
     &::after {
       content: " →";
       margin-left: .5rem;
+    }
+    &:hover {
+      background-color: var(--btn-cta-bg-hover) !important;
     }
   }
 }

@@ -72,29 +72,11 @@
       <div class="text">
         <h1>Tester et adopter des outils adaptés <br>aux besoins de ma collectivité. </h1>
         <p>Ces outils, mis à disposition de l’ensemble des collectivités territoriales, <br>sont construits avec les conseils d’agents et élus territoriaux volontaires.
-</p>
-          {{#if isAnonymous}}
-            {{create-topic-button
-              canCreateTopic=true
-              action=(route-action "showLogin")
-              disabled=false
-              btnClass="btn-default"
-              label="topic.create"
-              canCreateTopicOnTag=true
-            }}
-          {{else}}
-            {{create-topic-button
-              canCreateTopic=true
-              action=(route-action "createTopic")
-              disabled=false
-              btnClass="btn-default"
-              label="topic.create"
-              canCreateTopicOnTag=true
-            }}
-          {{/if}}
-        </div>
+        </p>
+        <a href="/tag/services-et-prototypes" class="btn-default btn btn-icon-text ember-view">Tester un service</a>
       </div>
-    </article>
+    </div>
+  </article>
   {{/if}}
 </script>
 

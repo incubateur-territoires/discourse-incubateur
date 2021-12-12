@@ -236,6 +236,10 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   text-decoration: underline !important;
 }
 
+// tailwind forces img to be display block which break emojis to a newline
+img.emoji {
+  display: inline;
+}
 
 @media (min-width: 768px) {
   .d-header {

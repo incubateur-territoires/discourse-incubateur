@@ -526,7 +526,7 @@ body:not(.staff) .hamburger-dropdown {
 
   .btn-icon-text {
     background-color: var(--create-topic-bg) !important;
-    color: var(--create-topic-fg) !important;
+    color: var(--create-topic-fg) c;
     .icon {
       display: none !important;
     }
@@ -537,8 +537,8 @@ body:not(.staff) .hamburger-dropdown {
 :not(.d-editor-button-bar) >
 .btn:not(.single-select-header):not(.modal-close),
 .topic-notifications-button > .select-kit > .btn {
-  background-color: var(--header_background);
-  color: var(--primary);
+  background-color: var(--header_background) !important;
+  color: var(--primary) !important;
   border: 1px solid var(--primary-low-mid);
   svg {
     color: white;

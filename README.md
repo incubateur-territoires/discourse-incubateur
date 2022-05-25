@@ -17,5 +17,5 @@ Le `docker-compose.yml` utilise l'image et la (configuration Bitnami)[https://gi
 Prerequis : un environnement ruby, une cle API Discourse lie a l'utilisateur admin
 
 - `gem install discourse_theme`
-- `discourse-theme watch <chemin_vers_le_projet>`
+- `discourse_theme watch <chemin_vers_le_projet>`
 - Completer les infos en fonction de votre host (localhost par defaut) et votre API key a generer dans l'espace administrateur de Discourse

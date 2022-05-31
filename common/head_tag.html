@@ -95,39 +95,40 @@
 
 <script type="text/discourse-plugin" version="0.8.13">
   const maxShownCategories = 5
+  const keepParentCategories = (categories) => categories.filter(cat => !cat.parentCategory)
+
   api.registerConnectorClass('top-notices', 'categories-list', {
     setupComponent(args, component) {
       api.onPageChange((url, title) => {
         const controller = api.container.lookup('controller:navigation/category')
         let categories = controller.get('category')?.subcategories || []
-        component.set('areAllCatShown', categories)
+        let shouldShrunkCategories = false
 
         // home page
         if(url === '/') {
-          categories = controller.site.categories.slice(0, maxShownCategories)
-          component.setProperties({
-            areAllCatShown: false,
-            showButtonLabel: 'categories.see_more'
-          })
+          categories = keepParentCategories(controller.site.categories)
+          shouldShrunkCategories = categories?.length > maxShownCategories
+          categories = shouldShrunkCategories ? categories.slice(0, 5) : categories
         }
-        let categoriesLength = categories?.length
+
         component.setProperties({
             'categories': categories,
-            'showSeeMoreButton': categoriesLength >= maxShownCategories,
-            'show': categoriesLength,
+            'areAllCatShown': !shouldShrunkCategories,
+            'show': categories?.length,
+            'showMoreButtonLabel': shouldShrunkCategories && 'categories.see_more'
           })
       })
     },
 
     actions: {
       expandCategories() {
-        let categories = this.site.categories
-        let areAllCatShown = !this.areAllCatShown
-        let showButtonLabel = areAllCatShown ? 'categories.see_less' : 'categories.see_more'
+        const categories = keepParentCategories(this.site.categories)
+        const wereAllCatShown = this.areAllCatShown
+        const buttonLabel = wereAllCatShown ? 'categories.see_more' : 'categories.see_less'
         this.setProperties({
-          categories: areAllCatShown ? categories : categories.slice(0, maxShownCategories),
-          areAllCatShown: areAllCatShown,
-          showButtonLabel: showButtonLabel,
+          categories: wereAllCatShown ? categories.slice(0, maxShownCategories) : categories,
+          areAllCatShown: !wereAllCatShown,
+          showMoreButtonLabel: buttonLabel,
         })
       }
     },
@@ -146,11 +147,11 @@
       {{/each}}
     </div>
     <div>
-      {{#if showSeeMoreButton}}
+      {{#if showMoreButtonLabel}}
       {{d-button id="expand-categories"
           class="btn-default"
           action="expandCategories"
-          label=(theme-prefix showButtonLabel)}}
+          label=(theme-prefix showMoreButtonLabel)}}
       {{/if}}
     </div>
   </nav>

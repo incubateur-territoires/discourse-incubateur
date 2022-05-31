@@ -1,3 +1,6 @@
 fr:
   theme_metadata:
     description: "Theme Discourse pour le Forum des Territoires"
+  categories:
+    see_less:  "Afficher moins de catégories"
+    see_more: "Afficher plus de catégories"

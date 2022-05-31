@@ -494,6 +494,11 @@ body:not(.staff) .hamburger-dropdown {
   background-color: transparent !important;
 }
 
+// Delete a category; The 'yes' button was white on white
+.bootbox.modal .modal-footer a.btn-primary {
+  color: var(--primary) !important;
+}
+
 .topic-list-item.visited a.title:not(.badge-notification),
 .latest-topic-list-item.visited a.title:not(.badge-notification),
 .category-topic-link.visited a.title:not(.badge-notification) {
@@ -537,7 +542,7 @@ body:not(.staff) .hamburger-dropdown {
 
   .btn-icon-text {
     background-color: var(--create-topic-bg) !important;
-    color: var(--create-topic-fg) c;
+    color: var(--create-topic-fg) !important;
     .icon {
       display: none !important;
     }
@@ -548,8 +553,8 @@ body:not(.staff) .hamburger-dropdown {
 :not(.d-editor-button-bar) >
 .btn:not(.single-select-header):not(.modal-close),
 .topic-notifications-button > .select-kit > .btn {
-  background-color: var(--header_background) !important;
-  color: var(--primary) !important;
+  background-color: var(--header_background);
+  color: var(--primary);
   border: 1px solid var(--primary-low-mid);
   svg {
     color: white;

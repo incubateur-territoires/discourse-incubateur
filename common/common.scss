@@ -434,6 +434,8 @@ body:not(.staff) .hamburger-dropdown {
 }
 
 .header-categories-list {
+  margin-bottom: 4rem;
+
   h2 {
     font-size: 1.1rem;
     padding: 1.5rem 0;
@@ -459,6 +461,15 @@ body:not(.staff) .hamburger-dropdown {
       padding: 1.5rem 2rem;
       align-self: stretch;
       border-radius: 0 .5rem .5rem 0;
+    }
+  }
+  .btn {
+    border: none !important;
+    color: var(--neutral) !important;;
+    border-radius: 2rem;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .04) !important;
     }
   }
 }

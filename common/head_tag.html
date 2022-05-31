@@ -94,33 +94,65 @@
 
 
 <script type="text/discourse-plugin" version="0.8.13">
+  const maxShownCategories = 5
   api.registerConnectorClass('top-notices', 'categories-list', {
     setupComponent(args, component) {
       api.onPageChange((url, title) => {
         const controller = api.container.lookup('controller:navigation/category')
-        const category = controller.get('category')
-        let categories = category ? controller.get('category').subcategories : []
+        let categories = controller.get('category')?.subcategories || []
+        component.set('areAllCatShown', categories)
 
         // home page
         if(url === '/') {
-          categories = controller.site.categories
+          categories = controller.site.categories.slice(0, maxShownCategories)
+          component.setProperties({
+            areAllCatShown: false,
+            showButtonLabel: 'categories.see_more'
+          })
         }
-        component.set('categories', categories)
-        component.set('show', categories?.length)
+        let categoriesLength = categories?.length
+        component.setProperties({
+            'categories': categories,
+            'showSeeMoreButton': categoriesLength >= maxShownCategories,
+            'show': categoriesLength,
+          })
       })
-    }
+    },
+
+    actions: {
+      expandCategories() {
+        let categories = this.site.categories
+        let areAllCatShown = !this.areAllCatShown
+        let showButtonLabel = areAllCatShown ? 'categories.see_less' : 'categories.see_more'
+        this.setProperties({
+          categories: areAllCatShown ? categories : categories.slice(0, maxShownCategories),
+          areAllCatShown: areAllCatShown,
+          showButtonLabel: showButtonLabel,
+        })
+      }
+    },
   })
 </script>
 <script type="text/x-handlebars" data-template-name="/connectors/top-notices/categories-list">
   {{#if show}}
   <nav class="header-categories-list">
     <h2>Thématiques</h2>
-    {{#each categories as |category|}}
-      <a href="{{category.url}}" style="background-color: #{{category.color}}">
-        <span></span>
-        <span>{{category.name}}</span>
-      </a>
-    {{/each}}
+    <div>
+      {{#each categories as |category|}}
+        <a href="{{category.url}}" style="background-color: #{{category.color}}">
+          <span></span>
+          <span>{{category.name}}</span>
+        </a>
+      {{/each}}
+    </div>
+    <div>
+      {{#if showSeeMoreButton}}
+      {{d-button id="expand-categories"
+          class="btn-default"
+          action="expandCategories"
+          label=(theme-prefix showButtonLabel)}}
+      {{/if}}
+    </div>
   </nav>
   {{/if}}
 </script>

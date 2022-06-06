@@ -94,33 +94,66 @@
 
 
 <script type="text/discourse-plugin" version="0.8.13">
+  const maxShownCategories = 5
+  const keepParentCategories = (categories) => categories.filter(cat => !cat.parentCategory)
+
   api.registerConnectorClass('top-notices', 'categories-list', {
     setupComponent(args, component) {
       api.onPageChange((url, title) => {
         const controller = api.container.lookup('controller:navigation/category')
-        const category = controller.get('category')
-        let categories = category ? controller.get('category').subcategories : []
+        let categories = controller.get('category')?.subcategories || []
+        let shouldShrunkCategories = false
 
         // home page
         if(url === '/') {
-          categories = controller.site.categories
+          categories = keepParentCategories(controller.site.categories)
+          shouldShrunkCategories = categories?.length > maxShownCategories
+          categories = shouldShrunkCategories ? categories.slice(0, 5) : categories
         }
-        component.set('categories', categories)
-        component.set('show', categories?.length)
+
+        component.setProperties({
+            'categories': categories,
+            'areAllCatShown': !shouldShrunkCategories,
+            'show': categories?.length,
+            'showMoreButtonLabel': shouldShrunkCategories && 'categories.see_more'
+          })
       })
-    }
+    },
+
+    actions: {
+      expandCategories() {
+        const categories = keepParentCategories(this.site.categories)
+        const wereAllCatShown = this.areAllCatShown
+        const buttonLabel = wereAllCatShown ? 'categories.see_more' : 'categories.see_less'
+        this.setProperties({
+          categories: wereAllCatShown ? categories.slice(0, maxShownCategories) : categories,
+          areAllCatShown: !wereAllCatShown,
+          showMoreButtonLabel: buttonLabel,
+        })
+      }
+    },
   })
 </script>
 <script type="text/x-handlebars" data-template-name="/connectors/top-notices/categories-list">
   {{#if show}}
   <nav class="header-categories-list">
     <h2>Thématiques</h2>
-    {{#each categories as |category|}}
-      <a href="{{category.url}}" style="background-color: #{{category.color}}">
-        <span></span>
-        <span>{{category.name}}</span>
-      </a>
-    {{/each}}
+    <div>
+      {{#each categories as |category|}}
+        <a href="{{category.url}}" style="background-color: #{{category.color}}">
+          <span></span>
+          <span>{{category.name}}</span>
+        </a>
+      {{/each}}
+    </div>
+    <div>
+      {{#if showMoreButtonLabel}}
+      {{d-button id="expand-categories"
+          class="btn-default"
+          action="expandCategories"
+          label=(theme-prefix showMoreButtonLabel)}}
+      {{/if}}
+    </div>
   </nav>
   {{/if}}
 </script>

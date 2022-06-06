@@ -434,6 +434,8 @@ body:not(.staff) .hamburger-dropdown {
 }
 
 .header-categories-list {
+  margin-bottom: 4rem;
+
   h2 {
     font-size: 1.1rem;
     padding: 1.5rem 0;
@@ -461,6 +463,15 @@ body:not(.staff) .hamburger-dropdown {
       border-radius: 0 .5rem .5rem 0;
     }
   }
+  .btn {
+    border: none !important;
+    color: var(--neutral) !important;;
+    border-radius: 2rem;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .04) !important;
+    }
+  }
 }
 
 .breadcrumb {
@@ -481,6 +492,11 @@ body:not(.staff) .hamburger-dropdown {
 // Create a topic and close it; The draft buttons were white on white
 .composer-controls button {
   background-color: transparent !important;
+}
+
+// Delete a category; The 'yes' button was white on white
+.bootbox.modal .modal-footer a.btn-primary {
+  color: var(--primary) !important;
 }
 
 .topic-list-item.visited a.title:not(.badge-notification),

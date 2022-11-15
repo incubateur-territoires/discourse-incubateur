@@ -549,3 +549,12 @@ body:not(.staff) .small-action {
 .suggested-topics {
   margin-bottom: 6rem;
 }
+
+// Custom header
+.d-header {
+  height: 6em;
+
+  #site-logo {
+    height: 3.5em 
+  }
+}

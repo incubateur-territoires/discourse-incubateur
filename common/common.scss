@@ -223,10 +223,6 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
   height: auto;
 }
 
-#site-logo {
-  display: none;
-}
-
 // Tailwind (imported with the header from the website) resets the `a` link color.
 // We put it back to the Discourse default
 .cooked a {
@@ -240,72 +236,6 @@ nav button:focus{outline:2px solid transparent;outline-offset:2px;}
 img.emoji {
   display: inline;
 }
-
-@media (min-width: 768px) {
-  .d-header {
-    height: 0;
-
-    .wrap {
-      margin-top: -200px;
-    }
-  }
-}
-
-
-@media (max-width: 1024px) {
-  .d-header .wrap {
-    margin-top: -160px;
-  }
-
-  .logo-marianne {
-    display: none !important;
-  }
-  .sign-up-button {
-    display: none;
-  }
-
-  .header-buttons button.login-button {
-    border: none !important;
-    padding-right: 0 !important;
-
-    svg {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .d-header .wrap {
-    margin-top: 4rem;
-  }
-
-  #app .logo-text {
-    display: none;
-  }
-
-  .d-header {
-    height: 0;
-  }
-  .d-header-wrap {
-    box-shadow: none;
-    position: absolute;
-    top: 0;
-    right: 24px;
-  }
-
-  .d-header-icons {
-    svg.d-icon {
-      max-height: 20px;
-    }
-    img {
-      max-width: 24px;
-      max-height: 24px;
-    }
-  }
-}
-
-// End of website css import for header
-
 
 table td {
   vertical-align: top;

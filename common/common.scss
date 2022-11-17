@@ -317,8 +317,7 @@ body:not(.staff) .hamburger-dropdown {
     padding: 0;
   }
   h1 {
-    margin: 0;
-    margin-bottom: 1.4rem;
+    margin: 0 0 1.4rem;
   }
 
 
@@ -529,7 +528,6 @@ body:not(.staff) .hamburger-dropdown {
 }
 
 // Thread page
-
 .topic-body p {
   margin: .7rem 0;
 }
@@ -555,6 +553,38 @@ body:not(.staff) .small-action {
   height: 9em;
 
   #site-logo {
-    height: 111.939px 
+    height: 111.939px
+  }
+}
+
+.before-d-header {
+  padding: 1em;
+  background-color: #F0F6F5;
+
+  font-size: 14px;
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      border-bottom: 1px solid #000099;
+    }
+
+    .contact-block {
+      svg {
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+  a {
+    color: #000099;
+
+    &:hover {
+      opacity: 0.7;
+      transition: all 0.5s;
+    }
   }
 }

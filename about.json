@@ -1,7 +1,8 @@
 {
   "name": "forum-territoires",
+  "version": "1.0.0",
   "about_url": null,
-  "license_url": null,
+  "license_url": "./LICENSE",
   "component": false,
   "assets": {
     "logo_url": "assets/forum-territoires.svg",
